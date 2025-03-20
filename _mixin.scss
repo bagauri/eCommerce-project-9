@@ -1,0 +1,118 @@
+@mixin b24 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: 0.03em;
+  line-height: 24px;
+}
+@mixin sb36 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 36px;
+  letter-spacing: 0.04em;
+  line-height: 48px;
+}
+@mixin b32 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+}
+@mixin sb48 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 48px;
+  letter-spacing: 0.04em;
+  line-height: 60px;
+}
+@mixin sb54 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 54px;
+  letter-spacing: 0.06em;
+  line-height: 64px;
+}
+
+@mixin r14 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+@mixin r16 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+@mixin r12 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+@mixin sb12 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+@mixin m12 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+@mixin m16 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+@mixin r11 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+@mixin sb20 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+@mixin r1626 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
