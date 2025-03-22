@@ -108,6 +108,14 @@
   letter-spacing: 0;
   line-height: 28px;
 }
+@mixin sb14 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
 @mixin r1626 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -115,4 +123,10 @@
   font-size: 16px;
   letter-spacing: 0;
   line-height: 26px;
+}
+
+@mixin flex($j) {
+  display: flex;
+  justify-content: $j;
+  align-items: center;
 }

@@ -1,2 +1,192 @@
 @import "./variables";
 @import "./mixin";
+
+header {
+  height: 142px;
+}
+
+//black banner
+.top-header {
+  height: 48px;
+  background-color: $b;
+  @include flex(flex-end);
+}
+
+.frame-746 {
+  @include flex(space-between);
+  max-width: 859px;
+  gap: 231px;
+  margin-right: 136px;
+}
+
+.frame-555 {
+  @include flex(unset);
+  gap: 8px;
+
+  & p {
+    color: $w;
+    @include r14;
+  }
+
+  & a {
+    color: $w;
+    @include sb14;
+  }
+}
+
+.frame-549 {
+  position: relative;
+  //   @include flex(unset);
+  //   flex: column;
+  //height: 54px;
+
+  &-inner {
+    @include flex(space-between);
+    gap: 5px;
+    padding-left: 1.5px;
+
+    & p {
+      color: $w;
+      @include r14;
+      margin: 1.5px 0;
+      text-align: center;
+    }
+
+    & img {
+      height: 24px;
+    }
+
+    // & a:focus-within .frame-549-inner2 {
+    //   visibility: visible;
+    // }
+  }
+
+  //fix 02/19 leqcia
+
+  //   &-inner2 {
+  //     background-color: $b;
+  //     position: absolute;
+  //     bottom: -27px;
+  //     width: 78px;
+  //     padding-left: 1.5px;
+  //     visibility: hidden;
+
+  //     & a {
+  //       text-decoration: none;
+  //       margin: 1.5px 0;
+  //       @include r14;
+  //       color: $w;
+  //       text-align: center;
+  //     }
+  //   }
+}
+
+//header
+.header {
+  height: 94px;
+  padding-top: 40px;
+  border-bottom: 0.5px solid $line;
+  box-sizing: border-box;
+
+  &-inner {
+    margin: auto;
+    @include flex(space-between);
+    width: 1170px;
+  }
+}
+
+.frame-556 {
+  @include flex(space-between);
+  margin: 7px 0;
+  width: 675px;
+}
+
+h1 {
+  @include b24;
+}
+
+nav {
+  @include flex(space-between);
+  width: 367px;
+
+  & a {
+    @include r16;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+  }
+
+  & a:hover {
+    border-bottom: 1px solid $line;
+  }
+}
+
+.frame-552 {
+  @include flex(space-between);
+  gap: 24px;
+}
+
+.search {
+  background-color: $s;
+  padding: 7px 12px 7px 20px;
+}
+
+.frame-550 {
+  @include flex(space-between);
+  gap: 34px;
+
+  & input {
+    @include r12;
+    background-color: transparent;
+    border: none;
+    width: 153px;
+    outline: none;
+
+    &:active,
+    :focus {
+      appearance: none;
+    }
+  }
+}
+
+.frame-551 {
+  @include flex(space-between);
+  gap: 16px;
+}
+
+.main {
+  height: 384px;
+  @include flex(unset);
+}
+
+.categories {
+  @include flex(flex-end);
+  align-items: flex-end;
+  padding-right: 16px;
+  width: 368px;
+  border-right: 0.5px solid $line;
+  height: 100%;
+}
+
+.frame-768 {
+  @include flex(space-between);
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  width: 217px;
+
+  & p {
+    @include r16;
+  }
+}
+
+.frame-558,
+.frame-559 {
+  @include flex(space-between);
+  width: 100%;
+
+  & p {
+    @include r16;
+  }
+}
