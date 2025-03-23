@@ -125,8 +125,17 @@
   line-height: 26px;
 }
 
-@mixin flex($j) {
+@mixin sb16 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+@mixin flex($j, $ai) {
   display: flex;
   justify-content: $j;
-  align-items: center;
+  align-items: $ai;
 }

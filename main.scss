@@ -1,28 +1,33 @@
 @import "./variables";
 @import "./mixin";
 
-header {
-  height: 142px;
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0 135px;
 }
 
 //black banner
+header {
+  padding: 0 135px;
+  background-color: $b;
+}
+
 .top-header {
   height: 48px;
   background-color: $b;
-  @include flex(flex-end);
+  @include flex(flex-end, center);
 }
 
 .frame-746 {
-  @include flex(space-between);
-  max-width: 859px;
+  @include flex(space-between, center);
+  width: 859px;
   gap: 231px;
-  margin-right: 136px;
 }
 
 .frame-555 {
-  @include flex(unset);
-  gap: 8px;
-
   & p {
     color: $w;
     @include r14;
@@ -31,6 +36,7 @@ header {
   & a {
     color: $w;
     @include sb14;
+    margin-left: 8px;
   }
 }
 
@@ -41,7 +47,7 @@ header {
   //height: 54px;
 
   &-inner {
-    @include flex(space-between);
+    @include flex(space-between, center);
     gap: 5px;
     padding-left: 1.5px;
 
@@ -86,17 +92,15 @@ header {
   height: 94px;
   padding-top: 40px;
   border-bottom: 0.5px solid $line;
-  box-sizing: border-box;
 
   &-inner {
-    margin: auto;
-    @include flex(space-between);
+    @include flex(space-between, center);
     width: 1170px;
   }
 }
 
 .frame-556 {
-  @include flex(space-between);
+  @include flex(space-between, center);
   margin: 7px 0;
   width: 675px;
 }
@@ -106,7 +110,7 @@ h1 {
 }
 
 nav {
-  @include flex(space-between);
+  @include flex(space-between, center);
   width: 367px;
 
   & a {
@@ -123,7 +127,7 @@ nav {
 }
 
 .frame-552 {
-  @include flex(space-between);
+  @include flex(space-between, center);
   gap: 24px;
 }
 
@@ -133,7 +137,7 @@ nav {
 }
 
 .frame-550 {
-  @include flex(space-between);
+  @include flex(space-between, center);
   gap: 34px;
 
   & input {
@@ -151,27 +155,26 @@ nav {
 }
 
 .frame-551 {
-  @include flex(space-between);
+  @include flex(space-between, center);
   gap: 16px;
 }
 
+//categories and carousel
 .main {
   height: 384px;
-  @include flex(unset);
-}
+  @include flex(unset, center);
 
-.categories {
-  @include flex(flex-end);
-  align-items: flex-end;
-  padding-right: 16px;
-  width: 368px;
-  border-right: 0.5px solid $line;
-  height: 100%;
+  & > .categories {
+    @include flex(flex-end, flex-end);
+    padding-right: 16px;
+    width: 368px;
+    border-right: 0.5px solid $line;
+    height: 100%;
+  }
 }
 
 .frame-768 {
-  @include flex(space-between);
-  align-items: flex-start;
+  @include flex(space-between, flex-start);
   flex-direction: column;
   gap: 16px;
   width: 217px;
@@ -183,10 +186,399 @@ nav {
 
 .frame-558,
 .frame-559 {
-  @include flex(space-between);
+  @include flex(space-between, center);
   width: 100%;
 
   & p {
     @include r16;
   }
+}
+
+.slider-container {
+  width: 892px;
+  height: 344px;
+  background-color: $b;
+  margin-left: 45px;
+  padding: 11px;
+}
+
+.slider-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.slider {
+  @include flex(unset, center);
+  //aspect-ratio: 16/9;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slide-1,
+.slide-2,
+.slide-3,
+.slide-4,
+.slide-5 {
+  @include flex(space-between, center);
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  height: 100%;
+
+  & img {
+    height: 100%;
+  }
+}
+
+.ad {
+  width: 294px;
+  @include flex(unset, flex-start);
+  gap: 21px;
+  flex-direction: column;
+  margin: 58px 0 47px 53px;
+
+  & p {
+    @include sb48;
+    color: $w;
+  }
+
+  & a {
+    text-decoration: none;
+    @include flex(space-between, center);
+    gap: 8px;
+
+    & span {
+      @include r16;
+      border-bottom: 1px solid $w;
+      padding-bottom: 4px;
+      color: $w;
+    }
+
+    & img {
+      margin: 5px 3.5px;
+    }
+  }
+}
+
+.frame-563 {
+  @include flex(space-between, center);
+  gap: 24px;
+
+  & p {
+    color: $w;
+    @include r16;
+  }
+}
+
+.slider-nav {
+  position: absolute;
+  @include flex(space-between, center);
+  z-index: 1;
+  gap: 12px;
+  left: 40%;
+  bottom: 0;
+  height: 14px;
+
+  & a {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $w;
+    opacity: 50%;
+    transition: opacity ease 250ms, transform 200ms ease;
+
+    &:active,
+    &:hover {
+      opacity: 100%;
+      transform: scale(1.2);
+    }
+
+    &:focus::after {
+      //come back to this with the dropdown
+      content: "";
+      position: absolute;
+      top: 1.5px;
+      left: 1.5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: $r;
+      transition: all 200ms ease;
+    }
+
+    & input {
+      position: absolute;
+      left: -5.5px;
+      top: -3.5px;
+      visibility: hidden;
+    }
+  }
+}
+
+//Flash Sales
+.flash-sales {
+  width: 100%;
+  min-height: 690px;
+  @include flex(space-between, center);
+  flex-direction: column;
+  margin-top: 140px;
+
+  & > a {
+    background-color: $r;
+    width: 234px;
+    height: 56px;
+    border-radius: 4px;
+    padding: 16px 48px;
+    color: $w;
+    @include m16;
+    text-decoration: none;
+    margin-top: 40px;
+  }
+}
+
+.frame-727 {
+  @include flex(space-between, flex-end);
+  height: 103px;
+  width: 100%;
+}
+
+.frame-725 {
+  @include flex(space-between, flex-end);
+  width: 600px;
+  height: 100%;
+}
+
+.frame-626 {
+  @include flex(space-between, flex-start);
+  flex-direction: column;
+  gap: 24px;
+
+  & p {
+    @include sb36;
+  }
+}
+.frame-625 {
+  @include flex(space-between, center);
+  gap: 16px;
+
+  & p {
+    @include sb16;
+    color: $r;
+  }
+}
+
+.rectangle {
+  width: 20px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: $r;
+}
+
+.countdown {
+  @include flex(space-between, center);
+  gap: 17px;
+
+  & p {
+    @include m12;
+  }
+}
+
+.semicolon {
+  @include flex(space-between, center);
+  flex-direction: column;
+  height: 16px;
+  width: 4px;
+  margin-top: 12px;
+
+  & .dot1,
+  & .dot2 {
+    width: 4px;
+    height: 4px;
+    background-color: $p;
+    border-radius: 50%;
+  }
+}
+
+.frame-580,
+.frame-581,
+.frame-582,
+.frame-583 {
+  @include flex(space-between, flex-start);
+  flex-direction: column;
+
+  & p:last-of-type {
+    @include sb36;
+  }
+}
+
+.frame-583 p:last-of-type:after {
+  content: "";
+  animation: countdown 10s step-end infinite;
+}
+
+@keyframes countdown {
+  0% {
+    content: "10";
+  }
+  10% {
+    content: "9";
+  }
+  20% {
+    content: "8";
+  }
+  30% {
+    content: "7";
+  }
+  40% {
+    content: "6";
+  }
+  50% {
+    content: "5";
+  }
+  60% {
+    content: "4";
+  }
+  70% {
+    content: "3";
+  }
+  80% {
+    content: "2";
+  }
+  90% {
+    content: "1";
+  }
+  100% {
+    content: "0";
+  }
+}
+
+.frame-726 {
+  @include flex(space-between, center);
+  gap: 8px;
+
+  & a {
+    background-color: $ow;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    @include flex(center, center);
+  }
+}
+
+.frame-577 {
+  @include flex(space-between, center);
+  width: 100%;
+  gap: 30px;
+}
+
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5 {
+  width: 270px;
+  @include flex(space-between, flex-start);
+  flex-direction: column;
+  gap: 16px;
+}
+
+.frame-570 {
+  background-color: $ow;
+  width: 100%;
+  height: 250px;
+  position: relative;
+
+  & > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & .discount {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 55px;
+    height: 26px;
+    border-radius: 4px;
+    background-color: $r;
+    padding: 4px 12px;
+
+    & p {
+      color: $w;
+      @include r12;
+    }
+  }
+}
+
+.frame-575 {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  &-inner {
+    @include flex(space-between, center);
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  & a {
+    width: 34px;
+    height: 34px;
+    background-color: $w;
+    border-radius: 50%;
+    @include flex(center, center);
+  }
+}
+
+.frame-569 {
+  @include flex(space-between, flex-start);
+  flex-direction: column;
+  gap: 8px;
+
+  & p {
+    @include m16;
+  }
+}
+
+.frame-567 {
+  @include flex(space-between, center);
+  gap: 12px;
+
+  & p {
+    @include m16;
+    color: $r;
+
+    &:last-of-type {
+      text-decoration: line-through;
+      color: $b;
+      opacity: 50%;
+    }
+  }
+}
+
+img[alt="half-star-icon"] {
+  width: 17px;
+  height: 17px;
+}
+
+.line {
+  height: 20px;
+  width: 100%;
+  border-bottom: 0.5px solid $line;
+}
+
+//browse by categories
+.bbc {
+  margin-top: 80px;
+  width: 100%;
+  height: 313px;
 }
