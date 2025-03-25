@@ -134,8 +134,104 @@
   line-height: 20px;
 }
 
-@mixin flex($j, $ai) {
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexxy($j, $ai) {
   display: flex;
   justify-content: $j;
   align-items: $ai;
+}
+@mixin flexx($j) {
+  display: flex;
+  justify-content: $j;
+  align-items: center;
+}
+@mixin flexy($ai) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $ai;
+}
+
+@mixin category {
+  @include flex;
+  gap: 16px;
+
+  & h2 {
+    @include sb16;
+    color: $r;
+  }
+}
+
+%rectangle {
+  width: 20px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: $r;
+}
+
+@mixin frw-bckw {
+  @include flex;
+  gap: 8px;
+
+  & a {
+    background-color: $ow;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    @include flexx(center);
+  }
+}
+
+@mixin button {
+  background-color: $r;
+  border-radius: 4px;
+  padding: 16px 48px;
+  color: $w;
+  @include m16;
+  text-decoration: none;
+  margin-top: 40px;
+}
+
+@mixin countdown10s {
+  content: "";
+  animation: countdown 10s step-end infinite;
+
+  @keyframes countdown {
+    0% {
+      content: "10";
+    }
+    10% {
+      content: "9";
+    }
+    20% {
+      content: "8";
+    }
+    30% {
+      content: "7";
+    }
+    40% {
+      content: "6";
+    }
+    50% {
+      content: "5";
+    }
+    60% {
+      content: "4";
+    }
+    70% {
+      content: "3";
+    }
+    80% {
+      content: "2";
+    }
+    90% {
+      content: "1";
+    }
+    100% {
+      content: "0";
+    }
+  }
 }
