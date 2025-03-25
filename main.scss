@@ -106,10 +106,12 @@ header {
   @include flex;
   margin: 7px 0;
   width: 675px;
-}
 
-h1 {
-  @include b24;
+  & > a {
+    text-decoration: none;
+    color: $b;
+    @include b24;
+  }
 }
 
 nav {
@@ -182,8 +184,10 @@ nav {
   gap: 16px;
   width: 217px;
 
-  & p {
+  & a {
     @include r16;
+    text-decoration: none;
+    color: $b;
   }
 }
 
@@ -461,11 +465,24 @@ h3 {
 
   &:hover .a2c {
     visibility: visible;
+    opacity: 1;
   }
 }
 
 .a2c {
-  visibility: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  background-color: $b;
+  padding: 9px 87px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  bottom: 0;
+  color: $w;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s;
+  text-decoration: none;
+  @include m16;
 }
 
 .frame-575 {
@@ -493,8 +510,10 @@ h3 {
   flex-direction: column;
   gap: 8px;
 
-  & p {
+  & a {
     @include m16;
+    text-decoration: none;
+    color: $b;
   }
 }
 
@@ -568,6 +587,8 @@ img[alt="half-star-icon"] {
   border: 1px solid $line;
   border-radius: 4px;
   @include r16;
+  text-decoration: none;
+  color: $b;
 
   &:hover {
     background-color: $r;
