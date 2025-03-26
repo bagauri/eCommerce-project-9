@@ -98,7 +98,6 @@ header {
 
   &-inner {
     @include flex;
-    width: 1170px;
   }
 }
 
@@ -121,7 +120,7 @@ nav {
   & a {
     @include r16;
     text-decoration: none;
-    color: #000;
+    color: $b;
     border-bottom: 1px solid transparent;
     transition: 0.3s;
   }
@@ -202,7 +201,7 @@ nav {
 }
 
 .slider-container {
-  width: 892px;
+  max-width: 70%;
   height: 344px;
   background-color: $b;
   margin-left: 45px;
@@ -524,12 +523,12 @@ h3 {
   & p {
     @include m16;
     color: $r;
+  }
 
-    &:last-of-type {
-      text-decoration: line-through;
-      color: $b;
-      opacity: 50%;
-    }
+  & .old-price {
+    text-decoration: line-through;
+    color: $b;
+    opacity: 50%;
   }
 }
 
@@ -633,12 +632,6 @@ img[alt="half-star-icon"] {
   margin-top: 60px;
 }
 
-.nodiscount {
-  color: $r !important;
-  text-decoration: none !important;
-  opacity: 100% !important;
-}
-
 .frame-566 {
   @include flex;
   gap: 8px;
@@ -723,4 +716,422 @@ img[alt="half-star-icon"] {
   height: 100%;
   width: 504px;
   right: 114px;
+}
+
+//Explore Our Products
+
+.frame-733 {
+  @include flexy(flex-end);
+  margin-top: 80px;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.frame-622 {
+  @include flexy(flex-start);
+  flex-direction: column;
+  gap: 20px;
+}
+
+.frame-616 {
+  @include frw-bckw;
+}
+.frame-734 {
+  width: 100%;
+}
+.frame-617,
+.frame-618 {
+  @include flex;
+  margin-bottom: 60px;
+}
+
+.new {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border-radius: 4px;
+  background-color: $g;
+  padding: 4px 12px;
+  color: $w;
+  @include r12;
+}
+
+.choice label input {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%;
+
+  &:checked {
+    border: 2px solid $w;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 0 2px $b;
+  }
+}
+
+input[name="choice1"] {
+  &[value="option1"] {
+    background-color: $ir;
+  }
+  &[value="option2"] {
+    background-color: $r;
+  }
+}
+input[name="choice2"] {
+  &[value="option1"] {
+    background-color: $iy;
+  }
+  &[value="option2"] {
+    background-color: $r;
+  }
+}
+input[name="choice3"] {
+  &[value="option1"] {
+    background-color: $b;
+  }
+  &[value="option2"] {
+    background-color: $r;
+  }
+}
+input[name="choice4"] {
+  &[value="option1"] {
+    background-color: $ig;
+  }
+  &[value="option2"] {
+    background-color: $r;
+  }
+}
+
+.eop {
+  @include flex;
+  flex-direction: column;
+}
+
+//New Arrival
+.new-arrival {
+  @include flexy(flex-start);
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 140px;
+}
+
+.frame-739 {
+  @include flex;
+  gap: 30px;
+}
+
+.frame-738 {
+  @include flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.frame-737 {
+  @include flex;
+  gap: 30px;
+}
+
+.ps-5 {
+  width: 570px;
+  height: 600px;
+  background-color: $b;
+  position: relative;
+
+  & img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+.text {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  color: $w;
+  width: 242px;
+  @include flexy(flex-start);
+  flex-direction: column;
+  gap: 16px;
+
+  & h4 {
+    @include sb24;
+  }
+
+  & p {
+    @include r14;
+  }
+
+  & a {
+    @include m16;
+    color: $w;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($w, 0.5);
+  }
+}
+
+.womens-collection {
+  width: 570px;
+  height: 284px;
+  background-color: rgba(13, 13, 13, 1);
+  position: relative;
+
+  & img {
+    position: absolute;
+    right: 0;
+  }
+
+  & .text {
+    bottom: 24px;
+    left: 24px;
+  }
+}
+
+.speakers {
+  background-color: $b;
+  width: 270px;
+  height: 284px;
+  position: relative;
+
+  & img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & .text {
+    gap: 8px;
+    bottom: 24px;
+    left: 24px;
+  }
+
+  .glow1 {
+    width: 196px;
+    height: 196px;
+    background-color: rgba(217, 217, 217, 0.9);
+    filter: blur(150px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.perfume {
+  background-color: $b;
+  width: 270px;
+  height: 284px;
+  position: relative;
+
+  & .glow1 {
+    width: 238px;
+    height: 238px;
+    background-color: rgba(217, 217, 217, 0.9);
+    filter: blur(150px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & .text {
+    gap: 8px;
+    bottom: 24px;
+    left: 24px;
+  }
+}
+
+//Guarantee
+.guarantee {
+  height: 161px;
+  width: 943px;
+  @include flex;
+  margin: 140px auto;
+
+  & .inner {
+    @include flexx(center);
+    flex-direction: column;
+    height: 100%;
+    gap: 35px;
+
+    & .circle {
+      background-color: $b;
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      box-shadow: 0 0 0 11px rgba(47, 46, 48, 0.3);
+      padding: 8px;
+    }
+
+    & .promise {
+      @include flex;
+      flex-direction: column;
+      gap: 8px;
+
+      & h5 {
+        @include sb20;
+        text-align: center;
+        width: 25ch;
+      }
+
+      & p {
+        @include r14;
+      }
+    }
+  }
+}
+
+footer {
+  height: 440px;
+  background-color: $b;
+  position: relative;
+  padding-top: 80px;
+
+  & .copy {
+    height: 40px;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: $w;
+    @include flexxy(center, flex-end);
+    position: absolute;
+    bottom: 24px;
+
+    & p {
+      opacity: 20%;
+      @include r16;
+    }
+  }
+
+  & .to-the-top {
+    position: absolute;
+    @include frw-bckw;
+    right: 89px;
+    top: -78px;
+  }
+}
+
+.footer {
+  height: 236px;
+  margin: 0 135px;
+  @include flexy(flex-start);
+  color: $w;
+}
+
+.section-1 {
+  @include flexy(flex-start);
+  flex-direction: column;
+  gap: 16px;
+
+  & .inner {
+    @include flexy(flex-start);
+    flex-direction: column;
+    gap: 24px;
+
+    & p {
+      @include r16;
+    }
+  }
+
+  & .email {
+    border: 1.5px solid $w;
+    border-radius: 4px;
+    padding: 9px 16px;
+    @include flex;
+    gap: 32px;
+
+    & input {
+      width: 105px;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      color: $w;
+
+      &:active {
+        appearance: none;
+      }
+    }
+  }
+}
+
+h6 {
+  @include sb24;
+}
+
+h7 {
+  @include m20;
+}
+
+.section-2,
+.section-3,
+.section-4 {
+  @include flexy(flex-start);
+  flex-direction: column;
+  gap: 24px;
+
+  & .inner {
+    @include flexy(flex-start);
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  & p {
+    @include r16;
+  }
+
+  & a {
+    text-decoration: none;
+    color: $w;
+    @include r16;
+  }
+}
+
+.section-2 {
+  width: 175px;
+}
+
+.section-5 {
+  @include flexy(flex-start);
+  flex-direction: column;
+  gap: 24px;
+
+  & .save {
+    @include flexy(flex-start);
+    flex-direction: column;
+    gap: 8px;
+
+    & .download {
+      @include flex;
+      gap: 8px;
+
+      & .stores {
+        @include flex;
+        flex-direction: column;
+        gap: 4px;
+
+        & .app-store,
+        & .play-store {
+          padding: 2px 3px;
+        }
+      }
+    }
+  }
+
+  & .socials {
+    @include flex;
+    gap: 24px;
+  }
+}
+.note {
+  @include m12;
+  opacity: 70%;
 }
