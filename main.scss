@@ -964,15 +964,6 @@ input[name="choice4"] {
     height: 100%;
     gap: 35px;
 
-    & .circle {
-      background-color: $b;
-      border-radius: 50%;
-      width: 58px;
-      height: 58px;
-      box-shadow: 0 0 0 11px rgba(47, 46, 48, 0.3);
-      padding: 8px;
-    }
-
     & .promise {
       @include flex;
       flex-direction: column;
@@ -989,6 +980,15 @@ input[name="choice4"] {
       }
     }
   }
+}
+
+.circle {
+  background-color: $b;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  box-shadow: 0 0 0 11px rgba(47, 46, 48, 0.3);
+  padding: 8px;
 }
 
 footer {
@@ -1134,4 +1134,152 @@ h7 {
 .note {
   @include m12;
   opacity: 70%;
+}
+
+///////////////////////////////////////////ABOUT PAGE//////////////////////////////////////////////////
+.location {
+  margin-top: 80px;
+  @include flex;
+  @include r14;
+  width: 86px;
+
+  & a {
+    text-decoration: none;
+    color: $b;
+    opacity: 50%;
+  }
+
+  & p span {
+    opacity: 50%;
+  }
+}
+
+//Our story
+
+.our-story {
+  margin-top: 180px;
+  width: 480px;
+  position: relative;
+  margin-bottom: 276px;
+
+  & h2 {
+    @include sb54;
+    margin-bottom: 40px;
+  }
+
+  & p {
+    @include r1626;
+
+    &:first-of-type {
+      margin-bottom: 24px;
+    }
+  }
+
+  & img {
+    position: absolute;
+    right: -825px;
+    top: -135px;
+  }
+}
+
+//Milestones
+
+.milestone {
+  @include flex;
+  gap: 30px;
+  width: 1170px;
+  height: 230px;
+
+  &-1,
+  &-2,
+  &-3,
+  &-4 {
+    width: 270px;
+    height: 100%;
+    border: 1px solid $line;
+    border-radius: 4px;
+    @include flexxy(center, center);
+
+    & .inner {
+      @include flex;
+      flex-direction: column;
+      gap: 12px;
+
+      & .circle {
+        margin-bottom: 22px;
+      }
+
+      & h3 {
+        @include b32;
+      }
+
+      & p {
+        @include r16;
+      }
+    }
+
+    &:nth-child(2) img {
+      filter: invert(1);
+    }
+
+    &:hover {
+      background-color: $r;
+      transition: 0.3s;
+
+      & .circle,
+      & h3,
+      & p {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+.executives {
+  @include flex;
+  margin-top: 140px;
+  position: relative;
+
+  & .tom,
+  & .emma,
+  & .will {
+    @include flexy(flex-start);
+    flex-direction: column;
+    gap: 32px;
+
+    & .info {
+      @include flexy(flex-start);
+      flex-direction: column;
+      gap: 16px;
+
+      & .name {
+        @include flexy(flex-start);
+        flex-direction: column;
+        gap: 8px;
+
+        & h4 {
+          @include m32;
+        }
+
+        & p {
+          @include r16;
+        }
+      }
+    }
+
+    .socials {
+      @include flex;
+      gap: 16px;
+    }
+  }
+
+  .slider-nav {
+    bottom: -40px;
+    left: 45.5%;
+
+    & a {
+      background-color: $b;
+      opacity: 30%;
+    }
+  }
 }

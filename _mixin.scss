@@ -34,6 +34,15 @@
   letter-spacing: 0.04em;
   line-height: 30px;
 }
+@mixin m32 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+}
 @mixin sb48 {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;

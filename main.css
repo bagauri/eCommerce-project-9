@@ -1262,14 +1262,6 @@ input[name=choice4][value=option2] {
   height: 100%;
   gap: 35px;
 }
-.guarantee .inner .circle {
-  background-color: #000;
-  border-radius: 50%;
-  width: 58px;
-  height: 58px;
-  box-shadow: 0 0 0 11px rgba(47, 46, 48, 0.3);
-  padding: 8px;
-}
 .guarantee .inner .promise {
   display: flex;
   justify-content: space-between;
@@ -1294,6 +1286,15 @@ input[name=choice4][value=option2] {
   font-size: 14px;
   letter-spacing: 0;
   line-height: 21px;
+}
+
+.circle {
+  background-color: #000;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  box-shadow: 0 0 0 11px rgba(47, 46, 48, 0.3);
+  padding: 8px;
 }
 
 footer {
@@ -1503,4 +1504,174 @@ h7 {
   letter-spacing: 0;
   line-height: 18px;
   opacity: 70%;
+}
+
+.location {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+  width: 86px;
+}
+.location a {
+  text-decoration: none;
+  color: #000;
+  opacity: 50%;
+}
+.location p span {
+  opacity: 50%;
+}
+
+.our-story {
+  margin-top: 180px;
+  width: 480px;
+  position: relative;
+  margin-bottom: 276px;
+}
+.our-story h2 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 54px;
+  letter-spacing: 0.06em;
+  line-height: 64px;
+  margin-bottom: 40px;
+}
+.our-story p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+.our-story p:first-of-type {
+  margin-bottom: 24px;
+}
+.our-story img {
+  position: absolute;
+  right: -825px;
+  top: -135px;
+}
+
+.milestone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 1170px;
+  height: 230px;
+}
+.milestone-1, .milestone-2, .milestone-3, .milestone-4 {
+  width: 270px;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.milestone-1 .inner, .milestone-2 .inner, .milestone-3 .inner, .milestone-4 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+}
+.milestone-1 .inner .circle, .milestone-2 .inner .circle, .milestone-3 .inner .circle, .milestone-4 .inner .circle {
+  margin-bottom: 22px;
+}
+.milestone-1 .inner h3, .milestone-2 .inner h3, .milestone-3 .inner h3, .milestone-4 .inner h3 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+}
+.milestone-1 .inner p, .milestone-2 .inner p, .milestone-3 .inner p, .milestone-4 .inner p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+.milestone-1:nth-child(2) img, .milestone-2:nth-child(2) img, .milestone-3:nth-child(2) img, .milestone-4:nth-child(2) img {
+  filter: invert(1);
+}
+.milestone-1:hover, .milestone-2:hover, .milestone-3:hover, .milestone-4:hover {
+  background-color: #db4444;
+  transition: 0.3s;
+}
+.milestone-1:hover .circle, .milestone-1:hover h3, .milestone-1:hover p, .milestone-2:hover .circle, .milestone-2:hover h3, .milestone-2:hover p, .milestone-3:hover .circle, .milestone-3:hover h3, .milestone-3:hover p, .milestone-4:hover .circle, .milestone-4:hover h3, .milestone-4:hover p {
+  filter: invert(1);
+}
+
+.executives {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 140px;
+  position: relative;
+}
+.executives .tom, .executives .emma, .executives .will {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 32px;
+}
+.executives .tom .info, .executives .emma .info, .executives .will .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+.executives .tom .info .name, .executives .emma .info .name, .executives .will .info .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+.executives .tom .info .name h4, .executives .emma .info .name h4, .executives .will .info .name h4 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+}
+.executives .tom .info .name p, .executives .emma .info .name p, .executives .will .info .name p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+.executives .tom .socials, .executives .emma .socials, .executives .will .socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.executives .slider-nav {
+  bottom: -40px;
+  left: 45.5%;
+}
+.executives .slider-nav a {
+  background-color: #000;
+  opacity: 30%;
 }/*# sourceMappingURL=main.css.map */
