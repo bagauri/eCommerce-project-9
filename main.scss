@@ -7,9 +7,8 @@ html {
 * {
   box-sizing: border-box;
 }
-
-.container {
-  padding: 0 135px;
+.body {
+  overflow: hidden;
 }
 
 //black banner
@@ -45,14 +44,14 @@ header {
 
 .frame-549 {
   position: relative;
-  //   @include flex(unset);
-  //   flex: column;
-  //height: 54px;
+  @include flexx(center);
+  flex-direction: column;
+  height: 54px;
 
   &-inner {
     @include flex;
     gap: 5px;
-    padding-left: 1.5px;
+    padding-left: 3px;
 
     & p {
       color: $w;
@@ -65,29 +64,34 @@ header {
       height: 24px;
     }
 
-    // & a:focus-within .frame-549-inner2 {
-    //   visibility: visible;
-    // }
+    & label {
+      cursor: pointer;
+    }
   }
 
-  //fix 02/19 leqcia
+  & .ge {
+    background-color: $b;
+    position: absolute;
+    bottom: -15px;
+    width: 78px;
+    padding-left: 3px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    box-shadow: 2px 2px 4px 0 $line;
+    display: none;
 
-  //   &-inner2 {
-  //     background-color: $b;
-  //     position: absolute;
-  //     bottom: -27px;
-  //     width: 78px;
-  //     padding-left: 1.5px;
-  //     visibility: hidden;
+    & a {
+      text-decoration: none;
+      margin: 1.5px 0;
+      @include r14;
+      color: $w;
+      text-align: center;
+    }
+  }
 
-  //     & a {
-  //       text-decoration: none;
-  //       margin: 1.5px 0;
-  //       @include r14;
-  //       color: $w;
-  //       text-align: center;
-  //     }
-  //   }
+  & #lang:checked ~ .ge {
+    display: flex;
+  }
 }
 
 //header
@@ -98,6 +102,7 @@ header {
 
   &-inner {
     @include flex;
+    padding: 0 135px;
   }
 }
 
@@ -167,6 +172,7 @@ nav {
 .main {
   height: 384px;
   @include flex;
+  padding: 0 135px;
 
   & > .categories {
     @include flexxy(flex-end, flex-end);
@@ -286,19 +292,17 @@ nav {
   position: absolute;
   @include flex;
   z-index: 1;
-  gap: 12px;
-  left: 40%;
+  gap: 8px;
+  left: 43%;
   bottom: 0;
   height: 14px;
 
   & a {
-    position: relative;
     width: 12px;
     height: 12px;
+    position: relative;
     border-radius: 50%;
-    background-color: $w;
-    opacity: 50%;
-    transition: opacity ease 250ms, transform 200ms ease;
+    background-color: $wo;
 
     &:active,
     &:hover {
@@ -306,24 +310,31 @@ nav {
       transform: scale(1.2);
     }
 
-    &:focus::after {
-      //come back to this with the dropdown
-      content: "";
-      position: absolute;
-      top: 1.5px;
-      left: 1.5px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background-color: $r;
-      transition: all 200ms ease;
-    }
-
+    //Used on the About us page
     & input {
-      position: absolute;
-      left: -5.5px;
-      top: -3.5px;
-      visibility: hidden;
+      position: relative;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $w;
+      opacity: 50%;
+      transition: opacity ease 250ms, transform 200ms ease;
+      margin: 0 0;
+      appearance: none;
+
+      &:active,
+      &:hover {
+        opacity: 100%;
+        transform: scale(1.16);
+      }
+
+      &:checked {
+        background-color: $r;
+        outline: none;
+        transform: scale(0.83);
+        box-shadow: 0 0 0 3px $w;
+        opacity: 100%;
+      }
     }
   }
 }
@@ -335,6 +346,8 @@ nav {
   @include flex;
   flex-direction: column;
   margin-top: 140px;
+  margin-bottom: 60px;
+  padding: 0 135px;
 }
 
 .button {
@@ -420,6 +433,11 @@ h3 {
   @include flex;
   width: 100%;
   gap: 30px;
+  overflow: visible;
+
+  & .item-5 {
+    margin-right: -308px;
+  }
 }
 
 .item-1,
@@ -462,9 +480,15 @@ h3 {
     }
   }
 
-  &:hover .a2c {
-    visibility: visible;
-    opacity: 1;
+  &:hover {
+    & .a2c {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    & > img {
+      top: 45%;
+    }
   }
 }
 
@@ -537,21 +561,16 @@ img[alt="half-star-icon"] {
   height: 17px;
 }
 
-.line {
-  height: 20px;
-  width: 100%;
-  border-bottom: 0.5px solid $line;
-}
-
 //Browse By Category
 .bbc {
-  margin-top: 80px;
   width: 100%;
-  height: 313px;
+  padding: 0 135px;
 }
 
 .frame-729 {
   @include flexy(flex-end);
+  border-top: 0.5px solid $line;
+  padding-top: 80px;
 }
 
 .frame-624 {
@@ -610,8 +629,8 @@ img[alt="half-star-icon"] {
 //Best Selling Products
 
 .bsp {
-  height: 518px;
-  margin-top: 140px;
+  margin-top: 70px;
+  padding: 0 135px;
 }
 
 .frame-731 {
@@ -641,6 +660,10 @@ img[alt="half-star-icon"] {
     color: $b;
     opacity: 50%;
   }
+}
+
+.container {
+  padding: 0 135px;
 }
 
 .ad2 {
@@ -806,6 +829,7 @@ input[name="choice4"] {
 .eop {
   @include flex;
   flex-direction: column;
+  padding: 0 135px;
 }
 
 //New Arrival
@@ -814,6 +838,7 @@ input[name="choice4"] {
   flex-direction: column;
   gap: 60px;
   margin-top: 140px;
+  padding: 0 135px;
 }
 
 .frame-739 {
@@ -1139,9 +1164,10 @@ h7 {
 ///////////////////////////////////////////ABOUT PAGE//////////////////////////////////////////////////
 .location {
   margin-top: 80px;
-  @include flex;
+  @include flexx(unset);
+  gap: 12px;
   @include r14;
-  width: 86px;
+  padding-left: 135px;
 
   & a {
     text-decoration: none;
@@ -1149,7 +1175,7 @@ h7 {
     opacity: 50%;
   }
 
-  & p span {
+  & span {
     opacity: 50%;
   }
 }
@@ -1161,6 +1187,7 @@ h7 {
   width: 480px;
   position: relative;
   margin-bottom: 276px;
+  padding-left: 135px;
 
   & h2 {
     @include sb54;
@@ -1177,7 +1204,7 @@ h7 {
 
   & img {
     position: absolute;
-    right: -825px;
+    right: -960px;
     top: -135px;
   }
 }
@@ -1187,14 +1214,14 @@ h7 {
 .milestone {
   @include flex;
   gap: 30px;
-  width: 1170px;
   height: 230px;
+  padding: 0 135px;
 
   &-1,
   &-2,
   &-3,
   &-4 {
-    width: 270px;
+    width: 300px;
     height: 100%;
     border: 1px solid $line;
     border-radius: 4px;
@@ -1239,6 +1266,7 @@ h7 {
   @include flex;
   margin-top: 140px;
   position: relative;
+  padding: 0 135px;
 
   & .tom,
   & .emma,
@@ -1277,9 +1305,114 @@ h7 {
     bottom: -40px;
     left: 45.5%;
 
-    & a {
-      background-color: $b;
+    & input {
+      background-color: $line;
       opacity: 30%;
+
+      &:active,
+      &:hover {
+        opacity: 30%;
+        transform: scale(1.16);
+      }
+
+      &:checked {
+        background-color: $r;
+        outline: none;
+        transform: scale(0.83);
+        box-shadow: 0 0 0 1.5px $w, 0 0 0 4px rgba(0, 0, 0, 0.2);
+        opacity: 100%;
+      }
     }
+  }
+}
+
+///////////////////////////////////////////WISHLIST PAGE//////////////////////////////////////////////////
+
+.wishlist {
+  margin-top: 80px;
+  padding: 0 135px;
+  & .inner {
+    @include flex;
+
+    & p {
+      @include r20;
+    }
+
+    & a {
+      text-decoration: none;
+      border: 1px solid $line;
+      border-radius: 4px;
+      color: $b;
+      padding: 16px 48px;
+      @include m16;
+    }
+  }
+
+  & .items {
+    @include flex;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  & .frame-603,
+  & .frame-618 {
+    width: 50%;
+    margin: 0 0;
+
+    & .frame-570 {
+      & > img {
+        top: 45%;
+      }
+
+      & .a2c {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  //Just For you
+  .jfy {
+    margin-top: 80px;
+    margin-bottom: 140px;
+
+    & h2 {
+      color: $b;
+      @include r20;
+    }
+
+    & .frame-617 {
+      width: 25%;
+      margin-bottom: 0;
+    }
+
+    & .a2c {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    & .frame-570 {
+      & > img {
+        top: 45%;
+      }
+    }
+  }
+}
+
+a[href="wishlist.html"] {
+  position: relative;
+
+  & p {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $r;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    color: $w;
+    text-decoration: none;
+    padding-left: 4.5px;
+    @include r12;
   }
 }

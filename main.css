@@ -13,8 +13,8 @@ html {
   box-sizing: border-box;
 }
 
-.container {
-  padding: 0 135px;
+.body {
+  overflow: hidden;
 }
 
 header {
@@ -60,13 +60,18 @@ header {
 
 .frame-549 {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 54px;
 }
 .frame-549-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 5px;
-  padding-left: 1.5px;
+  padding-left: 3px;
 }
 .frame-549-inner p {
   color: #fff;
@@ -82,6 +87,35 @@ header {
 .frame-549-inner img {
   height: 24px;
 }
+.frame-549-inner label {
+  cursor: pointer;
+}
+.frame-549 .ge {
+  background-color: #000;
+  position: absolute;
+  bottom: -15px;
+  width: 78px;
+  padding-left: 3px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+  display: none;
+}
+.frame-549 .ge a {
+  text-decoration: none;
+  margin: 1.5px 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+  color: #fff;
+  text-align: center;
+}
+.frame-549 #lang:checked ~ .ge {
+  display: flex;
+}
 
 .header {
   height: 94px;
@@ -92,6 +126,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 135px;
 }
 
 .frame-556 {
@@ -184,6 +219,7 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 135px;
 }
 .main > .categories {
   display: flex;
@@ -342,12 +378,23 @@ nav a:hover {
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-  gap: 12px;
-  left: 40%;
+  gap: 8px;
+  left: 43%;
   bottom: 0;
   height: 14px;
 }
 .slider-nav a {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.slider-nav a:active, .slider-nav a:hover {
+  opacity: 100%;
+  transform: scale(1.2);
+}
+.slider-nav a input {
   position: relative;
   width: 12px;
   height: 12px;
@@ -355,27 +402,21 @@ nav a:hover {
   background-color: #fff;
   opacity: 50%;
   transition: opacity ease 250ms, transform 200ms ease;
+  margin: 0 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
-.slider-nav a:active, .slider-nav a:hover {
+.slider-nav a input:active, .slider-nav a input:hover {
   opacity: 100%;
-  transform: scale(1.2);
+  transform: scale(1.16);
 }
-.slider-nav a:focus::after {
-  content: "";
-  position: absolute;
-  top: 1.5px;
-  left: 1.5px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
+.slider-nav a input:checked {
   background-color: #db4444;
-  transition: all 200ms ease;
-}
-.slider-nav a input {
-  position: absolute;
-  left: -5.5px;
-  top: -3.5px;
-  visibility: hidden;
+  outline: none;
+  transform: scale(0.83);
+  box-shadow: 0 0 0 3px #fff;
+  opacity: 100%;
 }
 
 .flash-sales {
@@ -386,6 +427,8 @@ nav a:hover {
   align-items: center;
   flex-direction: column;
   margin-top: 140px;
+  margin-bottom: 60px;
+  padding: 0 135px;
 }
 
 .button {
@@ -568,6 +611,10 @@ h3 {
   align-items: center;
   width: 100%;
   gap: 30px;
+  overflow: visible;
+}
+.frame-577 .item-5 {
+  margin-right: -308px;
 }
 
 .item-1,
@@ -617,6 +664,9 @@ h3 {
 .frame-570:hover .a2c {
   visibility: visible;
   opacity: 1;
+}
+.frame-570:hover > img {
+  top: 45%;
 }
 
 .a2c {
@@ -706,22 +756,17 @@ img[alt=half-star-icon] {
   height: 17px;
 }
 
-.line {
-  height: 20px;
-  width: 100%;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
-}
-
 .bbc {
-  margin-top: 80px;
   width: 100%;
-  height: 313px;
+  padding: 0 135px;
 }
 
 .frame-729 {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+  padding-top: 80px;
 }
 
 .frame-624 {
@@ -809,8 +854,8 @@ img[alt=half-star-icon] {
 }
 
 .bsp {
-  height: 518px;
-  margin-top: 140px;
+  margin-top: 70px;
+  padding: 0 135px;
 }
 
 .frame-731 {
@@ -852,6 +897,10 @@ img[alt=half-star-icon] {
   line-height: 24px;
   color: #000;
   opacity: 50%;
+}
+
+.container {
+  padding: 0 135px;
 }
 
 .ad2 {
@@ -1088,6 +1137,7 @@ input[name=choice4][value=option2] {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  padding: 0 135px;
 }
 
 .new-arrival {
@@ -1097,6 +1147,7 @@ input[name=choice4][value=option2] {
   flex-direction: column;
   gap: 60px;
   margin-top: 140px;
+  padding: 0 135px;
 }
 
 .frame-739 {
@@ -1509,22 +1560,23 @@ h7 {
 .location {
   margin-top: 80px;
   display: flex;
-  justify-content: space-between;
+  justify-content: unset;
   align-items: center;
+  gap: 12px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
   letter-spacing: 0;
   line-height: 21px;
-  width: 86px;
+  padding-left: 135px;
 }
 .location a {
   text-decoration: none;
   color: #000;
   opacity: 50%;
 }
-.location p span {
+.location span {
   opacity: 50%;
 }
 
@@ -1533,6 +1585,7 @@ h7 {
   width: 480px;
   position: relative;
   margin-bottom: 276px;
+  padding-left: 135px;
 }
 .our-story h2 {
   font-family: "Inter", sans-serif;
@@ -1557,7 +1610,7 @@ h7 {
 }
 .our-story img {
   position: absolute;
-  right: -825px;
+  right: -960px;
   top: -135px;
 }
 
@@ -1566,11 +1619,11 @@ h7 {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  width: 1170px;
   height: 230px;
+  padding: 0 135px;
 }
 .milestone-1, .milestone-2, .milestone-3, .milestone-4 {
-  width: 270px;
+  width: 300px;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
@@ -1622,6 +1675,7 @@ h7 {
   align-items: center;
   margin-top: 140px;
   position: relative;
+  padding: 0 135px;
 }
 .executives .tom, .executives .emma, .executives .will {
   display: flex;
@@ -1671,7 +1725,113 @@ h7 {
   bottom: -40px;
   left: 45.5%;
 }
-.executives .slider-nav a {
-  background-color: #000;
+.executives .slider-nav input {
+  background-color: rgba(0, 0, 0, 0.3);
   opacity: 30%;
+}
+.executives .slider-nav input:active, .executives .slider-nav input:hover {
+  opacity: 30%;
+  transform: scale(1.16);
+}
+.executives .slider-nav input:checked {
+  background-color: #db4444;
+  outline: none;
+  transform: scale(0.83);
+  box-shadow: 0 0 0 1.5px #fff, 0 0 0 4px rgba(0, 0, 0, 0.2);
+  opacity: 100%;
+}
+
+.wishlist {
+  margin-top: 80px;
+  padding: 0 135px;
+}
+.wishlist .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wishlist .inner p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+.wishlist .inner a {
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  color: #000;
+  padding: 16px 48px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+.wishlist .items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+.wishlist .frame-603, .wishlist .frame-618 {
+  width: 50%;
+  margin: 0 0;
+}
+.wishlist .frame-603 .frame-570 > img, .wishlist .frame-618 .frame-570 > img {
+  top: 45%;
+}
+.wishlist .frame-603 .frame-570 .a2c, .wishlist .frame-618 .frame-570 .a2c {
+  visibility: visible;
+  opacity: 1;
+}
+.wishlist .jfy {
+  margin-top: 80px;
+  margin-bottom: 140px;
+}
+.wishlist .jfy h2 {
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+.wishlist .jfy .frame-617 {
+  width: 25%;
+  margin-bottom: 0;
+}
+.wishlist .jfy .a2c {
+  visibility: visible;
+  opacity: 1;
+}
+.wishlist .jfy .frame-570 > img {
+  top: 45%;
+}
+
+a[href="wishlist.html"] {
+  position: relative;
+}
+a[href="wishlist.html"] p {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #db4444;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  text-decoration: none;
+  padding-left: 4.5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
 }/*# sourceMappingURL=main.css.map */
